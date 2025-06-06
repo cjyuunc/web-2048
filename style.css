@@ -3,7 +3,7 @@ body {
   background-color: #f1f5eb;
   color: #3b4632;
   display: flex;
-  flex-direction: column; /* ✅ 垂直排列元素 */
+  flex-direction: column; 
   align-items: center;
   margin: 0;
   touch-action: manipulation;
