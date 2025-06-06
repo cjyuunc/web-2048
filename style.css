@@ -1,7 +1,7 @@
 body {
   font-family: 'Noto Sans TC', sans-serif;
-  background-color: #f1f5eb; /* 淺自然底色 */
-  color: #3b4632; /* 深草色 */
+  background-color: #f1f5eb; 
+  color: #3b4632; 
   display: flex;
   justify-content: center;
   align-items: center;
@@ -11,7 +11,6 @@ body {
   background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
 }
 
-/* 背景閃爍回饋 */
 body.background-feedback {
   background-color: #e9f0e1;
 }
@@ -118,7 +117,6 @@ button:hover {
   transition: transform 0.1s ease-in-out, background-color 0.2s ease, color 0.2s ease;
 }
 
-/* 台灣自然色調配對的 tile 色系 */
 .tile-2 { background-color: #eaf3e1; color: #3b4632; }
 .tile-4 { background-color: #d4e8c9; }
 .tile-8 { background-color: #bddcb3; color: white; }
@@ -163,7 +161,6 @@ footer {
   color: #6e7a69;
 }
 
-/* Animations */
 .tile-new {
   animation: appear 0.2s ease;
 }
@@ -193,7 +190,6 @@ footer {
   }
 }
 
-/* Responsive */
 @media (max-width: 480px) {
   .container {
     padding: 10px;
