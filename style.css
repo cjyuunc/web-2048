@@ -1,11 +1,10 @@
 body {
   font-family: 'Noto Sans TC', sans-serif;
-  background-color: #f1f5eb; 
-  color: #3b4632; 
+  background-color: #f1f5eb;
+  color: #3b4632;
   display: flex;
-  justify-content: center;
+  flex-direction: column; /* ✅ 垂直排列元素 */
   align-items: center;
-  min-height: 100vh;
   margin: 0;
   touch-action: manipulation;
   background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
