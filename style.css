@@ -1,262 +1,241 @@
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #faf8ef; /* Light background */
-    color: #776e65; /* Dark text for contrast */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    margin: 0;
-    touch-action: manipulation; /* Prevent zooming on touch */
-    transition: background-color 0.1s ease-in; /* Smooth return for feedback */
+  font-family: 'Noto Sans TC', sans-serif;
+  background-color: #f1f5eb; /* 淺自然底色 */
+  color: #3b4632; /* 深草色 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  touch-action: manipulation;
+  background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
 }
 
-/* Background feedback effect */
+/* 背景閃爍回饋 */
 body.background-feedback {
-    background-color: #f7f4e8; /* Slightly different shade */
-    transition: background-color 0.05s ease-out; /* Quick transition */
+  background-color: #e9f0e1;
 }
-
 
 .container {
-    background-color: #bbada0; /* Grid background */
-    padding: 15px;
-    border-radius: 6px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
+  background-color: #cddac4;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.08);
+  text-align: center;
 }
 
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
 }
 
 h1 {
-    font-size: 3em;
-    margin: 0;
-    color: #776e65;
+  font-size: 3em;
+  margin: 0;
+  color: #3b5d3f;
 }
 
 .score-container {
-    background-color: #eee4da; /* Lighter tile color */
-    padding: 10px 20px;
-    border-radius: 3px;
-    font-size: 1.2em;
-    font-weight: bold;
+  background-color: #e8f0e1;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1.2em;
+  font-weight: bold;
 }
 
-/* Style for Best Score container */
 .best-score-container {
-    background-color: #cdc1b4; /* Slightly darker than score */
+  background-color: #d4e3d1;
 }
 
 #score, #best-score {
-    color: #776e65;
+  color: #3b4632;
 }
 
-
 button {
-    background-color: #8f7a66; /* Button color */
-    color: #f9f6f2; /* Light text on button */
-    border: none;
-    padding: 10px 20px;
-    border-radius: 3px;
-    font-size: 1em;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
+  background-color: #71835b;
+  color: #f3f5ef;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
 }
 
 button:hover {
-    background-color: #776e65; /* Darker hover */
+  background-color: #5f704d;
 }
 
 .options-container {
-    margin-bottom: 15px;
-    display: flex;
-    justify-content: center;
-    gap: 10px;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
 }
 
 .size-button {
-    background-color: #cdc1b4; /* Grid cell background */
-    color: #776e65;
-    font-weight: bold;
+  background-color: #dfe9d9;
+  color: #3b4632;
+  font-weight: bold;
 }
 
 .size-button.active {
-    background-color: #8f7a66; /* Button color */
-    color: #f9f6f2; /* Light text */
-    box-shadow: inset 0 2px 4px rgba(0,0,0,0.15);
+  background-color: #71835b;
+  color: #f3f5ef;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.15);
 }
 
 .grid-container {
-    position: relative; /* Needed for game over overlay */
-    width: 400px; /* Adjust size as needed */
-    height: 400px; /* Adjust size as needed */
-    background-color: #cdc1b4; /* Grid cell background */
-    border-radius: 6px;
-    padding: 15px;
-    box-sizing: border-box;
+  position: relative;
+  width: 400px;
+  height: 400px;
+  background-color: #d4e3d1;
+  border-radius: 6px;
+  padding: 15px;
+  box-sizing: border-box;
 }
 
 .grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(4, 1fr);
-    gap: 15px;
-    width: 100%;
-    height: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 15px;
+  width: 100%;
+  height: 100%;
 }
 
 .tile {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 3px;
-    font-size: 2em; /* Adjust based on tile size */
-    font-weight: bold;
-    background-color: #eee4da; /* Default empty tile */
-    color: #776e65; /* Default text color */
-    transition: transform 0.1s ease-in-out, background-color 0.2s ease, color 0.2s ease;
-    /* Font size will be adjusted based on grid size */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  font-size: 2em;
+  font-weight: bold;
+  background-color: #eaf3e1;
+  color: #3b4632;
+  transition: transform 0.1s ease-in-out, background-color 0.2s ease, color 0.2s ease;
 }
 
-/* Adjust tile font size based on grid size */
-.grid-container.size-8 .tile { font-size: 1.2em; }
-.grid-container.size-10 .tile { font-size: 0.9em; } /* Added for 10x10 */
+/* 台灣自然色調配對的 tile 色系 */
+.tile-2 { background-color: #eaf3e1; color: #3b4632; }
+.tile-4 { background-color: #d4e8c9; }
+.tile-8 { background-color: #bddcb3; color: white; }
+.tile-16 { background-color: #a2c69d; color: white; }
+.tile-32 { background-color: #8dbd85; color: white; }
+.tile-64 { background-color: #7ab06c; color: white; }
+.tile-128 { background-color: #679e5c; color: white; font-size: 1.8em; }
+.tile-256 { background-color: #5a8e4d; color: white; font-size: 1.8em; }
+.tile-512 { background-color: #4b7e3e; color: white; font-size: 1.8em; }
+.tile-1024 { background-color: #3e6c30; color: white; font-size: 1.5em; }
+.tile-2048 { background-color: #345c26; color: white; font-size: 1.5em; }
+.tile-higher { background-color: #2c4e1d; color: white; font-size: 1.3em; }
 
-/* --- Tile Colors (Bright & Lively Theme) --- */
-/* Using a palette inspired by bright colors */
-
-.tile-2 { background-color: #ffecb3; color: #776e65; } /* Light Yellow */
-.tile-4 { background-color: #ffd54f; color: #776e65; } /* Amber */
-.tile-8 { background-color: #ffb74d; color: #f9f6f2; } /* Orange */
-.tile-16 { background-color: #ff8a65; color: #f9f6f2; } /* Deep Orange */
-.tile-32 { background-color: #ff7043; color: #f9f6f2; } /* Brighter Orange */
-.tile-64 { background-color: #ff5722; color: #f9f6f2; } /* Deepest Orange */
-.tile-128 { background-color: #ffca28; color: #f9f6f2; font-size: 1.8em; } /* Gold */
-.tile-256 { background-color: #ffc107; color: #f9f6f2; font-size: 1.8em; } /* Brighter Gold */
-.tile-512 { background-color: #ffb300; color: #f9f6f2; font-size: 1.8em; } /* Amber Gold */
-.tile-1024 { background-color: #ffa000; color: #f9f6f2; font-size: 1.5em; } /* Darker Gold */
-.tile-2048 { background-color: #ff8f00; color: #f9f6f2; font-size: 1.5em; } /* Orange Gold */
-/* Add more styles for higher values if needed */
-.tile-higher { background-color: #3c3a32; color: #f9f6f2; font-size: 1.3em; } /* Dark for very high numbers */
-
-
-/* --- Game Over Overlay --- */
 .game-over-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(238, 228, 218, 0.73); /* Semi-transparent overlay */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    z-index: 100; /* Ensure it's on top */
-    border-radius: 6px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(225, 237, 215, 0.9);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  border-radius: 6px;
 }
 
 .game-over-overlay h2 {
-    font-size: 3em;
-    color: #776e65;
-    margin-bottom: 20px;
+  font-size: 3em;
+  color: #3b5d3f;
+  margin-bottom: 20px;
 }
 
 #restart-button-gameover {
-    font-size: 1.2em;
+  font-size: 1.2em;
 }
 
 footer {
-    margin-top: 20px;
-    font-size: 0.9em;
-    color: #a19386;
+  margin-top: 20px;
+  font-size: 0.9em;
+  color: #6e7a69;
 }
 
-/* --- Animations (Optional - can be added later) --- */
+/* Animations */
 .tile-new {
-    animation: appear 0.2s ease;
+  animation: appear 0.2s ease;
 }
 
 .tile-merged {
-    animation: pop 0.2s ease;
+  animation: pop 0.2s ease;
 }
 
 @keyframes appear {
-    from {
-        transform: scale(0);
-    }
-    to {
-        transform: scale(1);
-    }
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
 }
 
 @keyframes pop {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.2);
-    }
-    100% {
-        transform: scale(1);
-    }
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
-/* --- Responsive Adjustments --- */
+/* Responsive */
 @media (max-width: 480px) {
-    .container {
-        padding: 10px;
-        width: 95%;
-    }
-    h1 {
-        font-size: 2em;
-    }
-    .score-container {
-        padding: 8px 15px;
-        font-size: 1em;
-    }
-    button {
-        padding: 8px 15px;
-        font-size: 0.9em;
-    }
-    .grid-container {
-        width: 100%;
-        height: auto; /* Adjust height based on aspect ratio */
-        aspect-ratio: 1 / 1; /* Maintain square shape */
-        padding: 10px;
-    }
-    .grid {
-        gap: 10px;
-    }
-    .tile {
-        font-size: 1.5em; /* Base smaller font for smaller screens */
-    }
-    /* Responsive font sizes for different grid sizes */
-    .grid-container.size-8 .tile { font-size: 0.8em; }
-    .grid-container.size-10 .tile { font-size: 0.6em; } /* Added for 10x10 mobile */
+  .container {
+    padding: 10px;
+    width: 95%;
+  }
+  h1 {
+    font-size: 2em;
+  }
+  .score-container {
+    padding: 8px 15px;
+    font-size: 1em;
+  }
+  button {
+    padding: 8px 15px;
+    font-size: 0.9em;
+  }
+  .grid-container {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    padding: 10px;
+  }
+  .grid {
+    gap: 10px;
+  }
+  .tile {
+    font-size: 1.5em;
+  }
 
-    /* Adjustments for higher value tiles based on grid size */
-    .tile-128, .tile-256, .tile-512 { font-size: 1.3em; } /* Base adjustments */
-    .grid-container.size-8 .tile-128, .grid-container.size-8 .tile-256, .grid-container.size-8 .tile-512 { font-size: 0.7em; }
-    .grid-container.size-10 .tile-128, .grid-container.size-10 .tile-256, .grid-container.size-10 .tile-512 { font-size: 0.5em; }
+  .grid-container.size-8 .tile { font-size: 0.8em; }
+  .grid-container.size-10 .tile { font-size: 0.6em; }
 
-    .tile-1024, .tile-2048, .tile-higher { font-size: 1.1em; } /* Base adjustments */
-    .grid-container.size-8 .tile-1024, .grid-container.size-8 .tile-2048, .grid-container.size-8 .tile-higher { font-size: 0.6em; }
-    .grid-container.size-10 .tile-1024, .grid-container.size-10 .tile-2048, .grid-container.size-10 .tile-higher { font-size: 0.4em; }
+  .tile-128, .tile-256, .tile-512 { font-size: 1.3em; }
+  .tile-1024, .tile-2048, .tile-higher { font-size: 1.1em; }
 
-
-    .game-over-overlay h2 {
-        font-size: 2em;
-    }
-    #restart-button-gameover {
-        font-size: 1em;
-    }
-    footer {
-        font-size: 0.8em;
-    }
+  .game-over-overlay h2 {
+    font-size: 2em;
+  }
+  #restart-button-gameover {
+    font-size: 1em;
+  }
+  footer {
+    font-size: 0.8em;
+  }
 }
